@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import Slider from "./Slider"
-
-import ReactDOM from 'react-dom/client';
 import Slider0 from "./Slider0";
 
 
@@ -16,29 +14,25 @@ function my_request(sliders, setSliders){
     fetch("http://pets.сделай.site/api/pets/slider", requestOptions)
         .then(response=>response.json())
         .then(response=>setSliders(response))}
-
 const Slider01 = () => {
-        let [sliders, setSliders]=useState({data:{pets:[]}})
+    let [sliders, setSliders]=useState({data:{pets:[]}})
     useEffect(()=>my_request(sliders, setSliders), [])
     let slide=sliders.data.pets.map((slider, index)=>
         index===0 ? (<Slider0 slider={slider} key={index}/>) : (<Slider slider={slider} key={index}/>))
-
     return (
-        <div id="carouselExampleIndicators" className="carousel slide m-auto rounded bg-opacity-25 w-75 p-2"
-             data-bs-ride="carousel" style={{"height":" 570px ","min-height": "400px","background-color":"#68829E"}}>
+        <div id="carouselExampleIndicators" className="carousel slide m-auto rounded bg-opacity-25 w-75 p-2" data-bs-ride="carousel"
+             style={{"height":" 570px ","min-height":"400px","background-color":"#68829E"}}>
             <div className="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        className="active" aria-current="true" aria-label="Slide 1"></button>
+                        aria-current="true" aria-label="Slide 1" className="active"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                        aria-label="Slide 2"></button>
+                        aria-label="Slide 4"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-                        aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-                        aria-label="Slide 3"></button>
+                        aria-label="Slide 5"></button>
             </div>
             <div className="carousel-inner">
                 {slide}

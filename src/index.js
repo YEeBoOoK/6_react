@@ -9,6 +9,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/header";
 import Footer from "./components/Footer";
+import './components/style.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
